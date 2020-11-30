@@ -1,0 +1,575 @@
+
+        #pagina {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            
+           
+        }
+
+       
+
+        #canvas {
+            margin-top: 0px;
+            margin-left: 0px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #fff200;
+            border-radius: 15px;
+            position: relative;
+            border-top-right-radius:20px;
+            transition: 1s;
+            transition-property: all;
+        }
+
+        #canvas:focus {
+            outline: none;
+        }
+
+        #canvas-container {
+            display: none;
+            position: relative;
+            width: 900px;
+            transition: 1s;
+        }
+
+        #game-status {
+        background: #009846;
+        width: 160px;
+        height: 75px;
+        margin: 30px;
+        margin-left: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: up;
+        margin-top:40px; 
+        position: absolute;
+        box-shadow: 0px 3px 0px 0px #fff200;
+        left: 724px;
+        bottom: 500px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius:15px;
+        font-family: karla;
+        font-weight: bold;
+        font-size: 15px;
+        color: #000;
+        }
+        #vidas {
+        background: #fff200 ;
+        width: 155px;
+        height: 40px;
+        margin: 30px;
+        margin-left: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        box-shadow: 0px 3px 0px 0px #009846;
+        left: 724px;
+        bottom: 500px;
+        border-bottom-left-radius: 15px;
+        border-right-width: 5px;
+        border-right-color: #009846; 
+        font-family: karla;
+        font-weight: bold;
+        font-size: 25px;
+        color: #000;
+        }
+        #advertencia {
+         display: flex;
+            width: 155px;
+            height: 80px;
+            background-color:#fff200 ;
+            color: #000;
+            text-align: center;
+            box-shadow: 0px 3px 0px 0px #009846;
+            align-items: center;
+            align-content: center;
+            margin: auto;
+            font-family: karla;
+            font-size: 17px;
+            left: 730px;
+            bottom: 100px;
+            border-radius: 15px;
+            position: absolute;
+            justify-content: center;
+        }
+
+        #go-menu {
+            height: 25px;
+            width: 25px;
+        }
+
+
+        body {
+          background: url("images/bg10.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+
+        @font-face {
+            font-family: 'vermin';
+            src: url('media/VerminVibesV-Zlg3.ttf');
+        }
+
+        @font-face {
+            font-family: 'atari';
+            src: url('media/AtariClassic-gry3.ttf');
+        }
+
+        #instrucciones {
+            display: none;
+            width: 800px;
+            height: 600px!important;
+            background-color: #142350;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0px 3px 0px 0px #fff200;
+            align-items: center;
+            justify-content: center;
+            font-family: karla;
+            font-size: 15px;
+            border-color: #009846;
+            border-radius: 15px;
+            border-width: 5px;
+            border-style: solid;
+           }
+      
+    * {
+      margin:0;
+      padding:0 ;
+    }
+    #mensaje {
+            display: flex;
+            width: 155px;
+            height: 45px;
+            background-color:#fff200 ;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0px 3px 0px 0px #009846;
+            align-items: center;
+            align-content: center;
+            margin: auto;
+            font-family: karla;
+            font-size: 17px;
+            left: 730px;
+            bottom: 100px;
+            border-radius: 15px;
+            position: absolute;
+            justify-content: center;
+    }
+    .button{
+        background: #009846;
+        color:#000;
+        display: inline-block; 
+        font-size: 24px;
+        margin: 0;
+        height: 22px;
+        padding: 10px 0px;
+        overflow: hidden;
+        text-align: center;
+        width: 160px;
+        align-items: center;
+        text-decoration: none;
+        box-shadow: 0px 3px 0px 0px #fff200;
+        border-radius: 10px;
+        position: absolute;
+        left: 730px;
+        bottom: 350px;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.8s;
+        }
+        
+      .button.rest{
+        bottom: 250px;
+      }.button.inst{
+        bottom: 200px;
+        height:22px;
+      }
+      .button.stop{
+        bottom:300px;
+      }
+
+      .button:hover {
+      box-shadow: 0px 2px 0px 0px #ff3838;
+      padding-top: 7px;
+      width: 140px;
+      background: #fff200;
+      left:740px;
+      }.button::before{
+          content:"";
+          position: absolute;
+          left:0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          border-radius:0 0 50% 50%; 
+          z-index: -1;
+          transition: 0.8s;
+        }
+      .button:hover:before{
+        height:0% ;
+      }
+      .button.la{
+        bottom: 40px;
+        left: 155px;
+        transition:1s;
+        width: 140px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 0px 0px #009846;
+        background:#fff200;
+      }.button.la:hover{
+      box-shadow: 0px 2px 0px 0px #ff3838;
+      width: 120px;
+      background:#009846;
+      padding-top: 7px;
+      
+      left:170px;
+      transition:0.8s;
+      }
+      .icon{
+      left: 760px;
+      bottom: 360px;
+      display: flex;
+      position: absolute;
+      }.icon.rt{
+       bottom: 260px;
+       left:750px;
+      }.icon.st{
+      bottom: 310px;
+      }
+
+    #historia{
+       display: block;
+       width: 724px;
+       height: 600px ;
+       background-color: #142350;
+       color: #fff;
+       text-align: center;
+       box-shadow: 0px 3px 0px 0px #fff200;
+       align-items: center;
+       justify-content: center;
+       font-family: karla;
+       font-size: 17px;
+       border-color: #009846;
+       border-radius: 15px;
+       border-width: 5px;
+       border-style: solid;
+       margin: auto;
+       
+    }
+  
+#relog{
+background-color: #009846;
+display: inline-flex;
+box-shadow: 0px 3px 0px 0px  #fff200;
+border-radius: 10px;
+height: 40px;
+width: 160px;
+position: absolute;
+font-size: 50px;
+align-items: center;
+left: 730px;
+bottom: 400px;
+justify-content: center;
+}
+.loader{
+  position: absolute;
+ 
+  width:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 40%,#e5f403);
+  animation: animate 2s linear infinite;
+ 
+} 
+@keyframes animate{
+  0%{
+    transform: rotate(0deg );
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+.loader:before{
+  content: '';
+  position: absolute;
+  top:6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 1;
+}
+.loader:after{
+  content: '';
+  position: absolute;
+  top:6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 1;
+  
+  filter: blur(30px);
+}#loaderC{
+background:#000;
+width:100%;
+height:100vh ;
+position: fixed;
+top: 0;
+justify-content: center;
+align-items: center;
+text-align: center;
+display: flex;
+z-index: 4;
+transition: clip-path 0.3s ease-in-out;
+}.loaderC2{
+  clip-path: circle(0% at 50% 50%);
+} 
+.loader.J{
+position: absolute;
+display: flex;
+}
+#cargaJ{
+  left: 350px;
+  bottom: 250px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}#loaderT{
+  bottom: 238px;
+  left: 330px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: sweet purple;
+  font-size: 22px;
+  color: #fff;
+} #percent{
+  width: 156px;
+  height: 10px;
+  background: #142350;
+  position: absolute;
+  bottom: 575px;
+  display: flex;
+  left: 734px;
+  border-radius:10px;
+}#percent #progress{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--width,0)*1%);
+  height: 100%;
+  border-radius:10px;
+  background: linear-gradient(331deg, rgba(254,255,8,1) 33%, rgba(58,226,10,1) 73%, rgba(254,255,8,1) 100%);
+ box-shadow: inset 0 0 2px #fff;
+  animation: move 4s ease-in-out forwards; 
+}
+@keyframes move{
+  from  {
+    width: 0;
+  }
+}#dev{
+  width: 100px;
+  height: 50px;
+  background: #142350;
+  align-items: center;
+  text-align: center;
+  padding:0;
+  left: 80px;
+  bottom: 300px;
+  display: flex;
+  position: absolute;
+  border-color: #009846;
+  border-radius: 10px;
+  border-width: 5px; 
+  color: #fff;
+  transition: 1s;
+  transition-delay: 0.1s;
+  box-shadow: 0px 3px 0px 0px #fff200;
+}
+
+#dev .devel{
+  transform: scale(0);
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  
+}
+#dev h4{
+  transform: scale(0);
+  position: absolute;
+}#dev h1{
+  font-size:17px;
+  
+}
+#dev:hover{
+  position: absolute;
+  height: 600px;
+  align-items: stretch;
+  width: 215px;
+  left: 10px;
+  bottom: 30px;
+  text-align: center;
+  justify-content: center;
+  background: #590FEC;
+  transition: 1s;
+}#dev img{
+  left: 80px;
+  transition: 1s;
+  
+}
+#dev:hover img{
+position: absolute;
+width: 120px;
+left: 50px;
+height: 120px;
+bottom: 480px;
+transition: 1s;
+}#dev:hover h1{
+position: absolute;
+bottom: 430px;
+left: 40px;
+transition: 1s;
+font-size: 32px;
+color: #fff;
+animation: transfor 1s ease-in-out 
+upwards;
+}
+@keyframes transfor{
+  0%{
+  bottom: 300px;
+  }
+  100%{
+    bottom: 430px;
+  }
+}
+#dev:hover .devel{
+ transform: scale(1);
+ width: 180px;
+ height: 30px;
+ transition: 1s;
+ align-items: center;
+ text-align: center;
+ justify-content: center;
+ background: #fff200;
+ position: absolute;
+ left: 17px;
+ color: #000;
+ display: flex;
+ border-radius: 10px;
+ bottom: 30px;
+}
+#dev:hover .devel.dia{
+bottom: 310px;
+}
+#dev:hover .devel.mazu{
+bottom: 240px;
+}
+#dev:hover .devel.shei{
+bottom: 170px;
+}#dev:hover .devel.migu{
+bottom: 100px;
+}#dev:hover h4{
+  transform: scale(1);
+  left: 17px;
+  bottom: 380px;
+  color: #000;
+  position: absolute;
+}
+#dev .devel .info{
+ transform: scale(0);
+ width: 180px;
+ height: 60px;
+ left: 17px;
+ transition: 0s;
+ position: absolute;
+}
+#dev:hover .devel:hover .info{
+ transform:  scale(1);
+ width: 133%;
+ height: 200%;
+ left: -28px;
+ transition: 1s;
+ bottom: 0px;
+ position: absolute;
+ display: block;
+ align-items: center;
+ border-radius: 10px;
+ text-align: center;
+ justify-content: center;
+ background: #19FF02;
+}
+.loser{
+  display: flex;
+            width: 155px;
+            height: 140px;
+            background-color:#fff200 ;
+            color: #000;
+            text-align: center;
+            box-shadow: 0px 3px 0px 0px #009846;
+            align-items: center;
+            align-content: center;
+            margin: auto;
+            font-family: karla;
+            font-size: 26px;
+            left: 730px;
+            bottom: 50px;
+            border-radius: 15px;
+            position: absolute;
+            justify-content: center;
+            
+}
+#finalT{
+ position: absolute;
+  height: 200px;
+  align-items: center;
+  width: 200px;
+  left: 310px;
+  bottom: 220px;
+  display: flex;
+  font-size: 40px;
+  color:#fff;
+  z-index: 2;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  background: #590FEC;
+  transition: 1s; 
+}#finalT #finalB{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 3px 0px 0px #590FEC;
+  bottom: -20px;
+  transition: 1s;
+  background: #19FF02;
+}
+
+#finalT #finalB:hover{
+box-shadow: 0px 2px 0px 0px #19FF02;
+transition: 1s;
+border-radius: 15px;
+background: #fff200;
+}

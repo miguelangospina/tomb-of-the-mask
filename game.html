@@ -1,0 +1,97 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIFT INDIAN</title>
+    <link rel="icon"type="image/png"width="30" height="30" href="images/tomb.png">
+    <link rel="stylesheet"type="text/css" href="css/style.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/processing.js"></script>
+    <script src="js/fl-extended.js"></script>
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"> 
+</head>
+<body >
+</body>
+
+ 
+<div id="pagina">
+    <div id="loaderC">
+     <div class="loader"></div>
+       <img src="images/tomb.png" width="120" height="120">
+    </div>
+    <div style="display: none;" id="instrucciones"><h1>Instrucciones</h1>
+    </br>
+   <h3>Inicialmente nos situamos en nuestro avatar, el tiempo del juego empieza a correr cuando presionamos las flechas del teclado, con ellas le damos control al movimiento del avatar en los ejes X y Y (izquierda, derecha, arriba o abajo).</h3>
+   </br>
+   <h3>Cuando el cronómetro empieza a correr el agua también comenzará a subir, si esta nos cubre perderemos una vida.</h3>
+   </br>
+   <h3>Al pasearte por los pasillos del laberinto ¡lo debes hacer lento y con cuidado!, ya que, si chocas con un muro perderás una vida.</h3>
+   </br>
+   
+   <h3>Al perder una vida, el avatar regresara a su posicion inicial y el laberinto comenzara a inundarse de nuevo.</h3>
+   </br>
+   <h3>El objetivo principal del juego es que nuestro avatar avance por los pasillos del laberinto recogiendo la totalidad de monedas regadas en el mapa. Para ello cuenta con tres vidas y 2 minutos para recolectar las 72 monedas.</h3>
+   </br>
+   <h1>¿Aceptas la misión?</h1>
+      <a href="#"class="button la" onclick="ocultar()"><span ><img src="images/salir.png" width="20" height="20"></span>Cerrar</a>
+   </div>
+   <div id="dev"> <h1>Developers</h1> 
+     <h4>Tomb of the mask Swift Indian fue desarrolado por:</h4>
+      <img src="images/grupo.png" width="20" height="20">
+        <div class="devel dia">Diana Marcela Cadena<div class="info dia">Student code:2041260<br>Email: diana.marcela.cadena@...univalle...</div></div>
+        <div class="devel mazu">Juan Esteban Mazuera<div class="info mazu">Student code:2043008<br>Email: juan.yunda@correounivalle.edu.co</div></div>
+        <div class="devel shei">Sheilly Daylin Ortega<div class="info shei">Student code:2040051<br>Email: sheilly.ortega@correounivalle.edu.co</div></div>
+        <div class="devel migu">Miguel Angel Ospina<div class="info migu">Student code:2040634<br>Email: miguel.ospina.hernandez@..univalle...</div></div>
+        <div class="devel">Juan Jose Viafara<div class="info">Student code:2040751<br>Email: viafara.juan@correounivalle.edu.co</div></div>
+   </div>
+   <div id="canvas-container">
+       <canvas id="canvas"></canvas>
+          <div id="loser"style="display:none" class="loser">Se acabaron las vidas presione "Restart"</div>
+          <div id="loserTime"style="display:none" class="loser">Se acabó el tiempo presione "Restart"</div>
+        <div id="game-status"style="display:none">Puntaje:</div>
+        <div id="vidas" style.display = 'flex'> Vidas: </div>
+        <div id="tiempo"style="display:none">0</div>
+          <div id="percent"><div id="progress" style="--width: 0"></div></div>
+      <div id="cargaJ"style.display = 'flex'>
+        <div class="loader J"></div>
+           <img src="images/tomb.png" width="120" height="120">
+      </div>
+      <div id="loaderT" style="display:flex"><h3>Presione "Play"</h3></div>
+      
+      <div id="mensaje"style="display:none">Presione "Play"</div>
+      <div id="advertencia"style="display:none">¡NO CHOQUE CON LOS MUROS! PERDERA UNA VIDA</div>
+      
+      <div class="botones rt"><a href="#"class="button rest" onclick="location.reload()" >Restart</a> <span class="icon rt"><img src="images/actualizar-flecha.png" width="20" height="20"></span></div>
+      
+      <div class="botones" id="playB"><a href="#"class="button" onclick="iniciarJ(1)" > Play</a>
+        <span class="icon"><img src="images/punta-de-flecha-del-boton-de-reproduccion.png" width="20" height="20"></span>
+      </div>
+      <div id="relog">02:00</div>
+      <div class="botones st"><a href="#" class="button stop" onclick="iniciarJ(2)">Stop</a>
+       <span class="icon st"><img src="images/pausar.png" width="20" height="20"></span>
+       </div>
+      
+      <instrucciones href="#"class="button inst" onclick="mostrar()"><span ><img src="images/fold.png" width="20"height="20"></span>Instructions</instrucciones>
+      <form method="get" action="./index.html">
+      <div id="finalT"style="display:none">felictaciones terminaste tu misión
+        <a id="finalB" href="index.html">Inicio</a>
+      </div>
+</div>
+<div id="historia"><h2>HISTORIA</h2>
+<br>
+<h3>Nos encontramos con el personaje que estaba explorando el bosque y se encontró con una extraña máscara; cuando se la puso adquirió la habilidad de la supervelocidad. Cuando la prueba, los dueños de la máscara aparecieron y secuestraron al personaje. Sin embargo, cuando estaban entrando a la guarida, Tomb logró escapar de ellos, pero no sabía que se encontraba a una gran profundidad por estar amarrado a una bolsa; en ese momento tuvo que usar su nueva habilidad que le dió la máscara. Mientras intentaban atraparlo, uno de sus secuestradores lanzó una flecha al personaje, no obstante, Tomb la esquivó con su poder de velocidad, fallando el tiro e impactando contra un muro y abriendo un agujero del cual salió una gran cantidad de agua. Lo que tendrá que hacer el personaje es escapar de la cueva lo más pronto posible y evitando las trampas antes de ahogarse. A partir de ahí, comienza el juego.</h3>
+</br>
+</div>
+
+<script src="js/buzz.min.js"></script>
+<script src="mapa.js"></script>
+<script src="script.js"></script>
+<script src="game.js"></script>
+
+<script>
+        $("#play-button").parent().css("display", "none");
+        $("#canvas-container").fadeIn("slow");
+       ;
+        
+</script>
